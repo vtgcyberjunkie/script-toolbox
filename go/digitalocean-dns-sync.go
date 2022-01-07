@@ -32,6 +32,8 @@ func pub_ip() string {
 func main() {
     var my_host = ""
     var my_domain = ""
+    var my_domain_id = ""
+    
     if len(os.Args) >= 4 { 
       my_host = os.Args[1]
       my_domain = os.Args[2]
