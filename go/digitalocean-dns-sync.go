@@ -32,14 +32,13 @@ func pub_ip() string {
 func main() {
     var my_host = ""
     var my_domain = ""
-    var my_domain_id = ""
+    var my_domain_id=285678041
     
     if len(os.Args) >= 4 { 
       my_host = os.Args[1]
       my_domain = os.Args[2]
-      my_domain_id = os.Args[3]
     } else {
-      fmt.Println("Usage: ./script <hostname> <domain> <domain_id>")
+      fmt.Println("Usage: ./script <hostname> <domain>")
       os.Exit(-1)
     }
   
