@@ -30,12 +30,14 @@ func pub_ip() string {
 }
 
 func main() {
+    my_host = ""
+    my_domain = ""
     if len(os.Args) >= 3 { 
       my_host = os.Args[1]
       my_domain=os.Args[2]
     } else {
       fmt.Println("Usage: ./script <hostname> <domain>")
-      os.exit(-1)
+      os.Exit(-1)
     }
   
     token := os.Getenv("DIGITALOCEAN_TOKEN")
