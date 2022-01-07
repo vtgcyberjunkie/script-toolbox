@@ -32,11 +32,12 @@ func pub_ip() string {
 func main() {
     var my_host = ""
     var my_domain = ""
-    if len(os.Args) >= 3 { 
+    if len(os.Args) >= 4 { 
       my_host = os.Args[1]
-      my_domain=os.Args[2]
+      my_domain = os.Args[2]
+      my_domain_id = os.Args[3]
     } else {
-      fmt.Println("Usage: ./script <hostname> <domain>")
+      fmt.Println("Usage: ./script <hostname> <domain> <domain_id>")
       os.Exit(-1)
     }
   
@@ -51,6 +52,6 @@ func main() {
       Data: pub_ip(),
     }
 
-    domainRecord, _, err := client.Domains.EditRecord(ctx, my_domain, 285678041, editRequest)
+    domainRecord, _, err := client.Domains.EditRecord(ctx, my_domain, my_domain_id, editRequest)
     fmt.Println(domainRecord,err)
 }
